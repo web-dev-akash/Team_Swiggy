@@ -1,0 +1,140 @@
+body{
+    background-color: #e9ecee;
+}
+.tabBar-base-tabsBlock {
+    display: table-cell;
+    width: 35%;
+    line-height: 1.42857143;
+    background-color:#edf1f7;
+    color: #686b78;
+}
+
+.tabBar-base-selected {
+    background-color: #fff;
+    border-left-color: #ff3f6c;
+    border-right: 0;
+    color: black;
+}
+
+.tabBar-base-tab {
+    border-bottom: 1px solid #eaeaec;
+    border-right: 1px solid #eaeaec;
+    border-left: 5px solid #f4f4f5;
+    border-top: 0;
+    font-size: 14px;
+    cursor: pointer;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    margin-left: 20px;
+}
+
+.tabBar-base-tabLabel {
+    font-weight: 600;
+    display: inline-block;
+}
+
+.paymentOptions-base-tabDisplayContainer {
+    display: flex;
+    align-items: center;
+}
+
+.paymentOptions-base-tabDisplayIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* form input  */
+
+.pay-mode-option-right {
+    vertical-align: top;
+    display: table-cell;
+    width: 65%;
+    padding: 24px 32px;
+    background: #fff;
+    border-radius: 0 4px 4px 0;
+}
+
+.text {
+    width: 90%;
+    font-weight: 300;
+    border-radius: 4px;
+    line-height: 14px;
+    padding: 12px;
+    border: 1px solid #d4d5d9;
+    margin: 10px auto;
+}
+
+.exp-date {
+    font-weight: 300;
+    border-radius: 4px;
+    line-height: 14px;
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #d4d5d9;
+    margin: 10px auto;
+}
+
+.cvv {
+    font-weight: 300;
+    border-radius: 4px;
+    line-height: 14px;
+    width: 20%;
+    padding: 12px;
+    border: 1px solid #d4d5d9;
+    margin: 10px auto;
+}
+
+/* pay now button  */
+.payNowAjax-base-actionButton {
+    width: 100%;
+    text-align: center;
+    background: #60b246;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 48px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    margin-top: 50px;
+}
+
+.codCardUI-base-helpText {
+    font-size: 12px;
+    margin-top: 8px;
+    color: #282c3f;
+    line-height: 1.42857143;
+}
+#addstrip{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #eaeaec;
+    
+}
+#addstrip>div{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#addstrip>button{
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 63, 108);
+    border-color: rgb(255, 63, 108);
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+}
+
