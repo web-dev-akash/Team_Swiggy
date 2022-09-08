@@ -1,149 +1,20 @@
 body{
     background-color: #e9ecee;
 }
-.tabBar-base-tabsBlock {
-    display: table-cell;
-    width: 35%;
-    line-height: 1.42857143;
-    background-color:#edf1f7;
-    color: #686b78;
-}
-
-.tabBar-base-selected {
+#navbar{
+    height: 10vh;
     background-color: #fff;
-    border-left-color: #ff3f6c;
-    border-right: 0;
-    color: black;
 }
 
-.tabBar-base-tab {
-    border-bottom: 1px solid #eaeaec;
-    border-right: 1px solid #eaeaec;
-    border-left: 5px solid #f4f4f5;
-    border-top: 0;
-    font-size: 14px;
-    cursor: pointer;
-    height: 60px;
-    align-items: center;
-    display: flex;
-    margin-left: 20px;
-}
-
-.tabBar-base-tabLabel {
-    font-weight: 600;
-    display: inline-block;
-}
-
-.paymentOptions-base-tabDisplayContainer {
-    display: flex;
-    align-items: center;
-}
-
-.paymentOptions-base-tabDisplayIcon {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* form input  */
-
-.pay-mode-option-right {
-    vertical-align: top;
-    display: table-cell;
-    width: 65%;
-    padding: 24px 32px;
-    background: #fff;
-    border-radius: 0 4px 4px 0;
-}
-
-.text {
-    width: 90%;
-    font-weight: 300;
-    border-radius: 4px;
-    line-height: 14px;
-    padding: 12px;
-    border: 1px solid #d4d5d9;
-    margin: 10px auto;
-}
-
-.exp-date {
-    font-weight: 300;
-    border-radius: 4px;
-    line-height: 14px;
-    width: 60%;
-    padding: 12px;
-    border: 1px solid #d4d5d9;
-    margin: 10px auto;
-}
-
-.cvv {
-    font-weight: 300;
-    border-radius: 4px;
-    line-height: 14px;
-    width: 20%;
-    padding: 12px;
-    border: 1px solid #d4d5d9;
-    margin: 10px auto;
-}
-
-/* pay now button  */
-.payNowAjax-base-actionButton {
-    width: 100%;
-    text-align: center;
-    background: #60b246;
-    color: #fff;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 48px;
-    cursor: pointer;
-    border-radius: 4px;
-    border: none;
-    margin-top: 50px;
-}
-
-.codCardUI-base-helpText {
-    font-size: 12px;
-    margin-top: 8px;
-    color: #282c3f;
-    line-height: 1.42857143;
-}
-#addstrip{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-    border-radius: 4px;
-    border: 1px solid #eaeaec;
-    
-}
-#addstrip>div{
-    font-size: 14px;
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
-}
-#addstrip>button{
-    padding: 8px 16px;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 2px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(255, 63, 108);
-    border-color: rgb(255, 63, 108);
-    border-width: 1px;
-    border-style: solid;
-    cursor: pointer;
-}
 /*    cart items    */
 #content{
+    margin-top: 35px;
     padding: 10px 50px;
     display: grid;
     grid-template-columns: 700px 500px;
     gap: 50px;
 }
+
 
 #shopname{
     display: flex;
@@ -165,3 +36,183 @@ body{
     display: flex;
     justify-content: space-between;
 }
+
+#mySidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 450px;
+    padding-left: 50px;
+    padding-right: 20px;
+    background-color: #fff;
+    overflow-y: scroll;
+    
+}
+.closeDiv{
+    padding-top: 10px;
+    position: sticky;
+    top: 0;
+    z-index:1;
+    height: 80px;
+    
+}
+.closeDiv>div{
+    width: 100%;
+    height: 100%;
+    margin-left: -18px;
+    background-color: #fff;
+    font-size: smaller;
+    
+    
+}
+#sidebarbtn{
+    background-color: #fff;
+    font-size: 0.5rem;
+    font-weight: 600;
+    color: #282c3f;
+    line-height: 1.2rem;
+    margin-top: 20px;
+}
+#addressParent{
+    background-color: #fff;
+    padding: 30px;
+    
+}
+#address>div:first-child{
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #282c3f;
+}
+#address>div:nth-child(2){
+    color: #93959f;
+    margin: 10px 0;
+}
+#payment{
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 20px;
+    color: #93959f;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+}
+#map{
+    margin-top: 20px;
+    border:1px solid #d4d5d9;
+    width: 351px;
+}
+#Address{
+    margin-top: 25px;
+    border: 1px solid #d4d5d9;
+    width: 97%;
+}
+#Address input{
+ width: 100%;
+ height: 70px;
+ padding-left: 25px;
+ border: none;
+ border-bottom:1px solid #d4d5d9 ;
+}
+
+#icons{
+    display: flex;
+    height: 70px;
+}
+#icons>div{
+    border-right:1px solid #d4d5d9;
+    width: 100%;
+    padding-left: 25px;
+    padding-top: 22px;
+    color: #93959f;
+    cursor: pointer;   
+}
+#icons>div:last-child{
+    border-right: none;
+}
+#bottom{
+    position: sticky;
+    background: #fff;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    
+    
+}
+#bottom>div{
+width: 350px;
+height: 70px;
+}
+#bottom button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: #fff;
+    background-color: #fc8019;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#addnew{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.newone{
+    border: 1px solid #d4d5d9;
+    display: flex;
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    margin-right:15px ;
+}
+.newone>div{
+    margin-right: 10px;
+    font-size: large;
+}
+.newone:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.newone p{
+    font-size: small;
+    color: #93959f;
+    margin: 0;
+}
+.time{
+    font-size: small;
+    font-weight: bold;
+}
+.addressBox div{
+    margin-bottom: 10px;
+}
+.newone>div:first-child{
+    padding-top: 5px;
+}
+.addressBox button{
+    padding: 9px 0;
+    color: #fff;
+    text-transform: uppercase;
+    background: #60b246;
+    border: 0;
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: .3px;
+    position: relative;
+}
+#addbtn{
+    border: 1px solid #60b246;
+    color: #60b246;
+    background: #fff;
+    margin-top: 30px;
+}
+
+
+

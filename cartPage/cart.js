@@ -1,55 +1,57 @@
 import {items} from "./utility.js"
 var data=JSON.parse(localStorage.getItem("items"))||[];
 
-var form = document.querySelector("form").innerHTML;
-var placeOrderBtn = document.querySelector(".payNowAjax-base-actionButton").innerHTML;
 
 
-document.getElementById("card").addEventListener("click", showCard);
-function showCard(){
-    var x = document.querySelector("form");
-    document.querySelector("#card").style.color = "black";
-    document.querySelector("#cod").style.color = "#686b78";
-    document.querySelector("#cod").style.backgroundColor = "#edf1f7";
-    document.querySelector("#card").style.backgroundColor = "white";
-    x.innerHTML = form;
-    var btn = document.querySelector(".payNowAjax-base-actionButton");
-    btn.addEventListener("click", function(){
-        event.preventDefault();
-        window.location = "thankyou.html";
-    })
-}
-document.getElementById("cod").addEventListener("click", showCod);
-function showCod(){
-    var form = document.querySelector("form");
-    form.innerHTML = "";
+// var form = document.querySelector("form").innerHTML;
+// var placeOrderBtn = document.querySelector(".payNowAjax-base-actionButton").innerHTML;
 
-    document.querySelector("#card").style.color = "#686b78";
-    document.querySelector("#cod").style.color = "black";
-    document.querySelector("#card").style.backgroundColor = "#edf1f7";
-    document.querySelector("#cod").style.backgroundColor = "white";
 
-    var div = document.createElement("div");
-    var headingDiv = document.createElement("div");
-    headingDiv.innerText = "Pay on delivery (Cash/Card/UPI)";
-    headingDiv.setAttribute("class","card-base-heading");
+// document.getElementById("card").addEventListener("click", showCard);
+// function showCard(){
+//     var x = document.querySelector("form");
+//     document.querySelector("#card").style.color = "black";
+//     document.querySelector("#cod").style.color = "#686b78";
+//     document.querySelector("#cod").style.backgroundColor = "#edf1f7";
+//     document.querySelector("#card").style.backgroundColor = "white";
+//     x.innerHTML = form;
+//     var btn = document.querySelector(".payNowAjax-base-actionButton");
+//     btn.addEventListener("click", function(){
+//         event.preventDefault();
+//         window.location = "thankyou.html";
+//     })
+// }
+// document.getElementById("cod").addEventListener("click", showCod);
+// function showCod(){
+//     var form = document.querySelector("form");
+//     form.innerHTML = "";
 
-    var inputDiv = document.createElement("div");
-    inputDiv.innerText = "You can pay via Cash/Card or UPI enabled app at the time of delivery. Ask your delivery executive for these options.";
-    inputDiv.setAttribute("class", "codCardUI-base-helpText");
-    div.append(headingDiv, inputDiv);
+//     document.querySelector("#card").style.color = "#686b78";
+//     document.querySelector("#cod").style.color = "black";
+//     document.querySelector("#card").style.backgroundColor = "#edf1f7";
+//     document.querySelector("#cod").style.backgroundColor = "white";
+
+//     var div = document.createElement("div");
+//     var headingDiv = document.createElement("div");
+//     headingDiv.innerText = "Pay on delivery (Cash/Card/UPI)";
+//     headingDiv.setAttribute("class","card-base-heading");
+
+//     var inputDiv = document.createElement("div");
+//     inputDiv.innerText = "You can pay via Cash/Card or UPI enabled app at the time of delivery. Ask your delivery executive for these options.";
+//     inputDiv.setAttribute("class", "codCardUI-base-helpText");
+//     div.append(headingDiv, inputDiv);
     
-    var btn = document.createElement("button");
-    btn.setAttribute("class", "payNowAjax-base-actionButton");
-    btn.innerHTML = placeOrderBtn;
-    // var formbtn = document.querySelector(".payNowAjax-base-actionButton");
-    btn.addEventListener("click", function(){
-        event.preventDefault();
-        // alert("Order confirmed")
-        location = "thankYou.html";
-    });
-    form.append(div, btn);
-}
+//     var btn = document.createElement("button");
+//     btn.setAttribute("class", "payNowAjax-base-actionButton");
+//     btn.innerHTML = placeOrderBtn;
+//     // var formbtn = document.querySelector(".payNowAjax-base-actionButton");
+//     btn.addEventListener("click", function(){
+//         event.preventDefault();
+//         // alert("Order confirmed")
+//         location = "thankYou.html";
+//     });
+//     form.append(div, btn);
+// }
 
 const displayRightside=()=>{
     let div1=`<div id="shopname">
@@ -100,3 +102,67 @@ let div5=`
 document.getElementById("rightBlock").append(div1,div2,div3,div4,div5)
 
 }
+const decrease=(qty)=>{
+}
+
+
+const map=()=>{
+    let value="kanpur";
+    let div=`    <div class="mapouter"><div class="gmap_canvas"><iframe width="349" height="310" id="gmap_canvas" src="https://maps.google.com/maps?q=${value}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"></a><br><style>.mapouter{position:relative;text-align:right;height:310px;width:349px;}</style><a href="https://www.embedgooglemap.net">embed google map location</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:310px;width:349px;}</style></div></div>
+    `
+    document.getElementById("map").innerHTML=div;
+}
+map()
+let getAddress=()=>{
+    w3_close();
+    let flat=document.getElementById("door").value;
+    let landmark=document.getElementById("landmark").value;
+    homevalue;
+    
+    var div =`
+    <div class="newone">
+    <div class="${icon}"></div>
+    <div class="addressBox">
+    
+    <div>
+        <div>${homevalue}</div>
+        <div>
+            <p>${flat}</p>
+            <p>${landmark}</p>
+        </div>
+        <div class="time">36 MINS</div>
+        <button>DELIVER HERE</button>
+    </div>
+  </div>
+    </div>
+    `
+    
+    document.getElementById("address").innerHTML=`<div>Select Address</div>`
+    document.getElementById("addnew").innerHTML+=div
+
+}
+document.getElementById("bottom").addEventListener("click",getAddress);
+var homevalue
+var icon
+function check(){
+    homevalue=event.target.id;
+    if(homevalue=="Home"){
+        icon="fa-solid fa-house";
+        document.getElementById("Home").style.color="black";
+        document.getElementById("Work").style.color="#93959f";
+        document.getElementById("other").style.color="#93959f";
+    }
+    if(homevalue=="Work"){
+        icon="fa-solid fa-briefcase"
+        document.getElementById("Work").style.color="black";
+        document.getElementById("Home").style.color="#93959f";
+        document.getElementById("other").style.color="#93959f";
+    }
+    if(homevalue=="other"){
+        icon="fa-solid fa-location-dot"
+        document.getElementById("other").style.color="black";
+        document.getElementById("Work").style.color="#93959f";
+        document.getElementById("Home").style.color="#93959f";
+    }
+}
+document.getElementById("icons").addEventListener("click",check);
