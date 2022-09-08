@@ -1,9 +1,11 @@
+let restaurant;
 function getData() {
   fetch(`https://swiggy-clone-akash.herokuapp.com/data`).then((response) =>
     response.json().then((res) => {
       // const data = res.data;
       // console.log(res[0]);
-      // console.log(data);
+      console.log(res);
+      restaurant = res;
       renderDom(res);
     })
   );
@@ -11,8 +13,9 @@ function getData() {
 getData();
 
 function renderDom(data) {
-  // console.log(data);
+  console.log(data);
   let container = document.getElementById("ak-restaurant-data");
+  container.innerHTML = null;
   let count_target = document.getElementById("ak-restaurant-count");
   if (data != []) {
     count_target.innerText = data.length + " Restaurants";
@@ -50,3 +53,32 @@ function renderDom(data) {
     target.innerHTML = `<p class="h3">No Result Found</p>`;
   }
 }
+// let count = 0;
+document.getElementById("relevance").addEventListener("click", () => {
+  renderDom(restaurant);
+  // console.log(count++);
+});
+
+document.getElementById("rating").addEventListener("click", () => {
+  restaurant.sort((a, b) => Number(b.AggregateRating - a.AggregateRating));
+  // console.log(restaurant);
+  renderDom(restaurant);
+});
+document.getElementById("lowToHigh").addEventListener("click", () => {
+  restaurant.sort((a, b) => Number(a.AverageCost - b.AverageCost));
+  // console.log(restaurant);
+  renderDom(restaurant);
+});
+document.getElementById("highToLow").addEventListener("click", () => {
+  restaurant.sort((a, b) => Number(b.AverageCost - a.AverageCost));
+  // console.log(restaurant);
+  renderDom(restaurant);
+});
+
+document.getElementById("delivery").addEventListener("click", () => {
+  let data = restaurant.filter((elem) => {
+    return elem.HasOnlineDelivery == "Yes";
+  });
+  // console.log(data);
+  renderDom(data);
+});

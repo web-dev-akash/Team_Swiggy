@@ -15,40 +15,7 @@
     <link rel="stylesheet" href="./dashboard.css" />
   </head>
   <body>
-    <header class="ak-header">
-      <nav>
-        <div class="ak-header-left">
-          <img
-            src="https://logosandtypes.com/wp-content/uploads/2021/01/swiggy.svg"
-            alt=""
-          />
-          <p id="ak-searched-place">
-            Demo <i class="fa-solid fa-angle-down"></i>
-          </p>
-        </div>
-        <div class="ak-header-right">
-          <ul>
-            <li>
-              <a href="#">
-                <i class="fa-solid fa-magnifying-glass"></i> Search
-              </a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-percent"></i> Offers</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-regular fa-life-ring"></i> Help</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-regular fa-user"></i> Sign In</a>
-            </li>
-            <li>
-              <a href="#"><span id="ak-cart-items">0</span> Cart</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <header class="ak-header"></header>
 
     <!-- ---------------------------------First Section------------------------------- -->
 
@@ -88,16 +55,24 @@
             <p id="ak-restaurant-count">Restaurants</p>
           </div>
           <div>
-            <button>Relevance</button>
-            <button>Delivery Time</button>
-            <button>Rating</button>
-            <button>Cost: Low To High</button>
-            <button>Cost: High To Low</button>
+            <button id="relevance">Relevance</button>
+            <button id="delivery">Delivering Now</button>
+            <button id="rating">Rating</button>
+            <button id="lowToHigh">Cost: Low To High</button>
+            <button id="highToLow">Cost: High To Low</button>
           </div>
         </div>
         <div id="ak-restaurant-data"></div>
       </div>
     </section>
+
+    <footer></footer>
   </body>
+  <script type="module">
+    import { navbar } from "./components/navbar.js";
+    import { footer } from "./components/footer.js";
+    document.querySelector("header").innerHTML = navbar;
+    document.querySelector("footer").innerHTML = footer;
+  </script>
   <script src="dashboard.js"></script>
 </html>
