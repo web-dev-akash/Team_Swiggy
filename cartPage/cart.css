@@ -137,4 +137,31 @@ body{
     border-style: solid;
     cursor: pointer;
 }
+/*    cart items    */
+#content{
+    padding: 10px 50px;
+    display: grid;
+    grid-template-columns: 700px 500px;
+    gap: 50px;
+}
 
+#shopname{
+    display: flex;
+    justify-content: space-between;
+}
+#coupon{
+    display: flex;
+    justify-content: space-around;
+}
+#rightBlock{
+    width: 500 px;
+    height: 900 px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    background-color: #fff;
+    padding: 20px;
+}
+#billdetails>div{
+    display: flex;
+    justify-content: space-between;
+}

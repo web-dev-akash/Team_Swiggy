@@ -1,3 +1,6 @@
+import {items} from "./utility.js"
+var data=JSON.parse(localStorage.getItem("items"))||[];
+
 var form = document.querySelector("form").innerHTML;
 var placeOrderBtn = document.querySelector(".payNowAjax-base-actionButton").innerHTML;
 
@@ -48,8 +51,52 @@ function showCod(){
     form.append(div, btn);
 }
 
-var addressTotalObj = JSON.parse(localStorage.getItem("addressTotalObj"));
-document.getElementById("totalmrp").innerText = addressTotalObj.totalmrp;
-document.getElementById("totaldisc").innerText = addressTotalObj.totaldisc;
-document.getElementById("totalamt").innerText = addressTotalObj.totalamt;
-document.getElementById("priceDetails").innerText = addressTotalObj.totalItem;
+const displayRightside=()=>{
+    let div1=`<div id="shopname">
+    <div>shop Image</div>
+    <div>Shopname</div>
+</div>`
+let div2=document.createElement("div");
+div2.innerHTML=items(data);
+
+let div3=`
+<div id="suggestion">
+<svg class="_3iLcN" width="10px" height="10px" viewBox="0 0 32 32"><path d="M7.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.357-0.056 0.724-0.086 1.097-0.086zM25.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.358-0.056 0.724-0.086 1.097-0.086z"></path></svg>
+<input type="text" placeholder="Any suggestions? We will pass it on...">
+</div>
+`
+let div4=`
+                <div id="coupon">
+                    <div><img src="./img/Screenshot (196).png" alt=""></div>
+                    <div>Apply Coupons</div>
+                </div>
+`
+let div5=`
+                <div id="billdetails">
+                    <div>Bill Details</div>
+                    <div>
+                        <div>Item Total</div>
+                        <div>₹2700</div>
+                    </div>
+                    <div>
+                        <div>Delivery Fee | 2.8 kms</div>
+                        <div>₹27</div>
+                    </div>
+                    <div>
+                        <div>Cancellation Fee</div>
+                        <div>₹100.50</div>
+                    </div>
+                    <div>
+                        <div>Taxes and Charges</div>
+                        <div>₹145.50</div>
+                    </div>
+                    <div id="toPay">
+                        <div>TO PAY</div>
+                        <div id="totalamt">₹2973</div>
+                    </div>
+                </div>
+
+`
+document.getElementById("rightBlock").append(div1,div2,div3,div4,div5)
+
+}
