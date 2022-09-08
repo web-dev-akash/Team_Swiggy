@@ -29,7 +29,7 @@ export const footer = `
       <a href="#">Corporate – Swiggy Money Codes Terms and Conditions</a>
       <a href="#">Corporate - Swiggy Discount Voucher Terms and Conditions</a>
     </div>
-    <div>
+    <div class="ak-footer-google">
       <a
         href="https://itunes.apple.com/in/app/id989540920?referrer=utm_source%3Dswiggy%26utm_medium%3Dhomepage"
       >

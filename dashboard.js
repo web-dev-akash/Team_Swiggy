@@ -21,36 +21,29 @@ function renderDom(data) {
     count_target.innerText = data.length + " Restaurants";
     for (let i = 0; i < data.length; i++) {
       let rating = Number(data[i].AggregateRating);
-      let color_code;
+      let colorCode;
       if (rating > 3.5) {
-        color_code = "green";
+        colorCode = "#48c479";
       } else if (rating < 3.5 && rating > 2.3) {
-        color_code = "badge-warning";
+        colorCode = "#db7c38";
       } else {
-        color_code = "badge-danger";
+        colorCode = "#e1b055";
       }
       container.innerHTML += ` 
             <a href="eg_user_restaurent_view.html?restaurantID=${data[i].RestaurantID}">
-                    <div>
-                        <img src="${data[i].restaurantImages}" alt="restaurant_img">
-                    <div>
-
-                        <p>${data[i].RestaurantName}</p>
-                        <p>${data[i].Cuisines}</p>
-                        <div>
-                            <span>★ ${rating}</span>
-                        </div>
-                        
-                        <div>
-                            <p>₹ ${data[i].AverageCost} FOR TWO</p>
-                        </div>
-                    </div>
+              <div class="ak-card">
+                  <img src="${data[i].restaurantImages}" alt="restaurant_img">
+                  <p>${data[i].RestaurantName}</p>
+                  <p>${data[i].Cuisines}</p>
+                  <div class="restaurantRating">
+                    <span style="background:${colorCode}; color:white">★ ${rating}</span>
+                    <p>₹ ${data[i].AverageCost} FOR TWO</p>
+                  </div>
                 </div>
-            </div>
             </a>`;
     }
   } else {
-    target.innerHTML = `<p class="h3">No Result Found</p>`;
+    container.innerHTML = `<p class="h3">No Result Found</p>`;
   }
 }
 // let count = 0;

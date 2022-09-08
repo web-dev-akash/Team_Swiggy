@@ -22,7 +22,7 @@ export const navbar = `<nav>
               <a href="#"><i class="fa-regular fa-life-ring"></i> Help</a>
             </li>
             <li>
-              <a href="#"><i class="fa-regular fa-user"></i> Sign In</a>
+              <a href="#"><i class="fa-regular fa-user"></i> SignIn</a>
             </li>
             <li>
               <a href="#"><span id="ak-cart-items">0</span> Cart</a>
