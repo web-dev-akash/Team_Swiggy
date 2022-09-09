@@ -617,6 +617,69 @@ svg:not(:root) {
     font-weight: 400;
 }
 
+/* cartitems */
 
 
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }
+    
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+    
+    .bg-grey {
+    background-color: #eae8e8;
+    }
+    
+    @media (min-width: 992px) {
+    .card-registration-2 .bg-grey {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    }
+    }
+    
+    @media (max-width: 991px) {
+    .card-registration-2 .bg-grey {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    }
+    }
+    .dish{
+        display: flex;
+    }
+    .dish>div{
+        display: flex;
+        height: 30px;
+       margin-right: 20px;
+        margin-top: 25px;
+    }
+    .dish>div:nth-child(2){
+    display: block;
+    margin-top: 0px;
+    padding: 0;
+
+    }
+    .dish>div:nth-child(2)>h6{
+        padding: 0;
+    }
+    .dish>div:nth-child(3){
+    
+        border: 1px solid black;
+    }
+    .dish>div:nth-child(3)>input{
+        width: 40px
+    }
+    .dish>div:nth-child(4){
+        margin-top: 15px;
+    }
 
