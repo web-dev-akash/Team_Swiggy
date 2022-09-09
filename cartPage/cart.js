@@ -1,4 +1,10 @@
-import {items} from "./utility.js"
+// import {items,footer} from "./utility.js"
+
+import { footer, navbar } from "./utility.js";
+
+document.getElementById("navbar").innerHTML=navbar
+document.getElementById("footer").innerHTML=footer
+
 var cartitem=JSON.parse(localStorage.getItem("cartItems"))||[];
 console.log(cartitem);
 var addressArr=JSON.parse(localStorage.getItem("address"))||[];
