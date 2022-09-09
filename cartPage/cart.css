@@ -617,6 +617,458 @@ svg:not(:root) {
     font-weight: 400;
 }
 
+/* cartitems */
 
 
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }
+    
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+    
+    .bg-grey {
+    background-color: #eae8e8;
+    }
+    
+    @media (min-width: 992px) {
+    .card-registration-2 .bg-grey {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    }
+    }
+    
+    @media (max-width: 991px) {
+    .card-registration-2 .bg-grey {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    }
+    }
+    .dish{
+        display: flex;
+    }
+    .dish>div{
+        display: flex;
+        height: 30px;
+       margin-right: 20px;
+        margin-top: 25px;
+    }
+    .dish>div:nth-child(2){
+    display: block;
+    margin-top: 0px;
+    padding: 0;
 
+    }
+    .dish>div:nth-child(2)>h6{
+        padding: 0;
+    }
+    .dish>div:nth-child(3){
+    
+        border: 1px solid black;
+    }
+    .dish>div:nth-child(3)>input{
+        width: 40px
+    }
+    .dish>div:nth-child(4){
+        margin-top: 15px;
+    }
+    #respic{
+        display: flex;
+    }
+    #respic img{
+        width: 50px;
+        height: 50px;
+    }
+    #respic h4{
+        padding: 0%;
+        font-size: medium;
+        font-weight: 500;
+        margin-top: -7px;
+        margin-left: 20px;
+    }
+    #toPay>div{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #rightBlockUp{
+        background-color: #fff;
+    }
+
+    /* navbar */
+
+    .ak-header {
+        height: 80px;
+        /* background-color: #ccc; */
+      }
+      .ak-header nav {
+        width: 82%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      .ak-header-left {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        /* border: 1px solid; */
+        height: 80px;
+      }
+      .ak-header-left > img {
+        width: 60px;
+      }
+      .ak-header-right ul {
+        padding-right: 40px;
+        display: flex;
+        /* justify-content: space-between; */
+        gap: 70px;
+        height: 80px;
+        align-items: center;
+      }
+      .ak-header-right ul * {
+        text-decoration: none;
+        list-style-type: none;
+        color: rgb(61, 61, 61);
+      }
+      .ak-header-right ul i {
+        margin-right: 5px;
+      }
+      .ak-section-one {
+        height: 47.5vh;
+        background-color: #171a29;
+      }
+      .ak-section-one-container {
+        align-items: center;
+        height: 47.5vh;
+        /* border: 1px solid green; */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 82%;
+        margin: auto;
+        /* gap: 70px; */
+      }
+      .ak-section-one-container > div {
+        border: 20px solid transparent;
+        transition: 0.3s;
+      }
+      .ak-section-one-container img {
+        width: 100%;
+      }
+      .ak-section-one-container > div:hover {
+        border: 15px solid transparent;
+        cursor: pointer;
+      }
+      .ak-restaurant-filters {
+        width: 97%;
+        margin: auto;
+        /* border: 1px solid; */
+        height: 60px;
+        border-bottom: 1px solid #ddd;
+      }
+      .ak-section-two-container {
+        width: 82%;
+        margin: auto;
+        margin-top: 50px;
+      }
+      .ak-restaurant-filterBtn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0 30px;
+      }
+      .ak-restaurant-filters button {
+        border: none;
+        background-color: white;
+        font-size: 17px;
+        color: #454545;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+      }
+      .ak-restaurant-filters button:hover {
+        color: #171a29;
+      }
+      .ak-restaurant-filters button:focus {
+        border-bottom: 1px solid black;
+      }
+      #ak-restaurant-data {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 30px 0;
+        gap: 25px 40px;
+        /* padding: 10px; */
+        /* border: 1px solid; */
+      }
+      #ak-restaurant-data img {
+        width: 100%;
+        height: 180px;
+      }
+      #ak-restaurant-data > a {
+        border: 1px solid transparent;
+        padding: 20px;
+        transition: all 0.3s;
+      }
+      #ak-restaurant-data > a:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border: 1px solid #ddd;
+      }
+      #ak-restaurant-count {
+        font-size: 30px;
+        font-weight: 600;
+      }
+      .ak-restaurant-filters {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #ak-restaurant-data > a {
+        text-decoration: none;
+        color: black;
+      }
+      .footer-container {
+        background-color: black;
+        color: white;
+      }
+      .footer-container a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        margin: 15px 0;
+      }
+      
+      .footer-top {
+        width: 82%;
+        margin: auto;
+        padding-top: 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.7fr 1fr;
+        gap: 50px;
+      }
+      .footer-top > div > h3 + a {
+        margin-top: 40px;
+      }
+      .footer-top > div > h3 {
+        font-size: 15px;
+        color: #8c8c8c;
+      }
+      .footer-hr {
+        height: 1px;
+        width: 82%;
+        margin: 30px auto;
+        background-color: #8c8c8c;
+      }
+      .footer-down {
+        width: 82%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 1px solid; */
+        padding-bottom: 30px;
+      }
+      .footer-down img {
+        width: 50%;
+        /* border: 1px solid; */
+      }
+      .footer-promo i {
+        font-size: 25px;
+        cursor: pointer;
+      }
+      .footer-promo {
+        display: flex;
+        gap: 30px;
+      }
+      .footer-down > div > p {
+        font-size: 20px;
+        margin-right: 100px;
+      }
+      .restaurantRating {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .restaurantRating span {
+        padding: 2px 5px 4px 5px;
+        border-radius: 50px;
+        text-align: center;
+      }
+      .restaurantRating p {
+        font-size: 15px;
+        color: #454545;
+      }
+      .ak-card img + p {
+        margin: 10px 0 5px 0;
+        font-size: 18px;
+      }
+      .ak-card > p:nth-child(3) {
+        color: #5c5c5c;
+        font-size: 15px;
+      }
+      
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .ak-header nav {
+          width: 95%;
+        }
+        .ak-header-left {
+          gap: 10px;
+        }
+        .ak-header-left > img {
+          width: 20%;
+        }
+        .ak-header-right ul {
+          gap: 30px;
+          padding-right: 0;
+        }
+        .ak-header-right ul > li a {
+          /* border: 1px solid; */
+          display: flex;
+          width: 75px;
+          gap: 5px;
+        }
+        .ak-section-one-container {
+          width: 90%;
+          height: 30vh;
+        }
+        .ak-section-one {
+          height: 30vh;
+        }
+        .ak-section-two-container {
+          width: 95%;
+        }
+        #ak-restaurant-count {
+          font-size: 25px;
+        }
+        .ak-restaurant-filterBtn {
+          gap: 15px;
+        }
+        .ak-restaurant-filterBtn button {
+          font-size: 13px;
+          padding-bottom: 23px;
+        }
+        #ak-restaurant-data {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+        .footer-top {
+          width: 90%;
+        }
+        .footer-top img {
+          margin-top: 20px;
+          width: 80%;
+        }
+        .footer-hr {
+          width: 90%;
+        }
+        .footer-down {
+          width: 90%;
+        }
+      }
+      
+      @media screen and (min-width: 320px) and (max-width: 767px) {
+        .ak-header nav {
+          width: 100%;
+        }
+        .ak-header-left {
+          gap: 5px;
+        }
+        .ak-header-left p {
+          font-size: 10px;
+          display: flex;
+        }
+        .ak-header-left > img {
+          width: 40%;
+        }
+        .ak-header-right ul {
+          gap: 0px;
+          padding-right: 0;
+        }
+        .ak-header-right ul > li a {
+          font-size: 10px;
+          /* border: 1px solid; */
+          display: flex;
+          width: 40px;
+          margin-left: 15px;
+        }
+        .ak-section-one-container {
+          width: 100%;
+          height: 20vh;
+        }
+        .ak-section-one {
+          height: 20vh;
+        }
+        .ak-section-two-container {
+          width: 100%;
+          margin-top: 0;
+        }
+        #ak-restaurant-count {
+          font-size: 11px;
+        }
+        .ak-restaurant-filterBtn {
+          gap: 4px;
+        }
+        .ak-restaurant-filterBtn button {
+          font-size: 8px;
+          padding-bottom: 18px;
+          border-bottom: none;
+        }
+        #ak-restaurant-data {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
+        .footer-top {
+          width: 95%;
+          grid-template-columns: 1fr;
+          padding-top: 40px;
+        }
+        .footer-top > div > h3 + a {
+          margin-top: 20px;
+        }
+        .footer-top img {
+          margin-top: 20px;
+          width: 100%;
+        }
+        .ak-footer-google {
+          margin-top: -30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+        }
+        .footer-hr {
+          width: 95%;
+        }
+        .footer-down {
+          width: 98%;
+        }
+        .footer-down img {
+          width: 90px;
+        }
+        .footer-down > div > p {
+          font-size: 10px;
+          margin-right: 0px;
+        }
+        .footer-promo i {
+          font-size: 15px;
+          cursor: pointer;
+        }
+        .footer-promo {
+          display: flex;
+          gap: 15px;
+        }
+      }
+      #ak-searched-place{
+        font-weight: bold;
+      }
+      #rightcontent{
+        padding: 20px 15px;
+      }

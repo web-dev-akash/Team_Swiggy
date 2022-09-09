@@ -1,6 +1,12 @@
-import {items} from "./utility.js"
-var data=JSON.parse(localStorage.getItem("cartItems"))||[];
-console.log(data);
+// import {items,footer} from "./utility.js"
+
+import { footer, navbar } from "./utility.js";
+
+document.getElementById("navbar").innerHTML=navbar
+document.getElementById("footer").innerHTML=footer
+
+var cartitem=JSON.parse(localStorage.getItem("cartItems"))||[];
+console.log(cartitem);
 var addressArr=JSON.parse(localStorage.getItem("address"))||[];
 var id=1;
 
@@ -60,55 +66,6 @@ displayAddress(addressArr);
 //     form.append(div, btn);
 // }
 
-function displayRightside(){
-    let div1=`<div id="shopname">
-    <div>shop Image</div>
-    <div>Shopname</div>
-</div>`
-let div2=document.createElement("div");
-div2.innerHTML=items(data);
-
-let div3=`
-<div id="suggestion">
-<svg class="_3iLcN" width="10px" height="10px" viewBox="0 0 32 32"><path d="M7.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.357-0.056 0.724-0.086 1.097-0.086zM25.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.358-0.056 0.724-0.086 1.097-0.086z"></path></svg>
-<input type="text" placeholder="Any suggestions? We will pass it on...">
-</div>
-`
-let div4=`
-                <div id="coupon">
-                    <div><img src="./img/Screenshot (196).png" alt=""></div>
-                    <div>Apply Coupons</div>
-                </div>
-`
-let div5=`
-                <div id="billdetails">
-                    <div>Bill Details</div>
-                    <div>
-                        <div>Item Total</div>
-                        <div>₹2700</div>
-                    </div>
-                    <div>
-                        <div>Delivery Fee | 2.8 kms</div>
-                        <div>₹27</div>
-                    </div>
-                    <div>
-                        <div>Cancellation Fee</div>
-                        <div>₹100.50</div>
-                    </div>
-                    <div>
-                        <div>Taxes and Charges</div>
-                        <div>₹145.50</div>
-                    </div>
-                    <div id="toPay">
-                        <div>TO PAY</div>
-                        <div id="totalamt">₹2973</div>
-                    </div>
-                </div>
-
-`
-document.getElementById("rightBlock").append(div1,div2,div3,div4,div5)
-
-}
 
 
 const map=()=>{
@@ -258,6 +215,8 @@ function displayPayment(){
 
 
 
+
+
 // payment
 
 
@@ -315,4 +274,52 @@ function showCod(){
 
 // displayright
 
-
+function displayright(){
+    var totalamt=0;
+cartitem.map(function(el){
+    totalamt+=el.price;
+    let div=`
+    <div class="row mb-4 d-flex justify-content-between align-items-center dish">
+                        <div class="col-md-2 col-lg-2 col-xl-2">
+                          <img height="20px" width="20px"
+                            src="./img/800px-Indian-vegetarian-mark.svg.png"
+                            class="img-fluid rounded-3" alt="Cotton T-shirt">
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+                          <h6 class="text-muted">${el.name}</h6>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                          <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                            <i class="fas fa-minus"></i>
+                          </button>
+    
+                          <input id="${el.id}" min="0" name="quantity" value="1" type="number"
+                            class="form-control form-control-sm" />
+    
+                          <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                          <h6 class="mb-0">₹${el.price} </h6>
+                        </div>
+                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                          <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                        </div>
+                      </div>
+    
+                      <hr class="my-4">
+    `
+    document.getElementById("items").innerHTML+=div;
+})
+ var div1=`
+ <div>
+                        <div>TO PAY</div>
+                        <div>${totalamt}</div>
+                    </div>
+ `
+ document.getElementById("toPay").innerHTML=div1;
+}
+displayright()
