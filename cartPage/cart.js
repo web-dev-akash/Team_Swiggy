@@ -269,7 +269,9 @@ function showCod(){
 // displayright
 
 function displayright(){
+    var totalamt=0;
 cartitem.map(function(el){
+    totalamt+=el.price;
     let div=`
     <div class="row mb-4 d-flex justify-content-between align-items-center dish">
                         <div class="col-md-2 col-lg-2 col-xl-2">
@@ -306,5 +308,12 @@ cartitem.map(function(el){
     `
     document.getElementById("items").innerHTML+=div;
 })
+ var div1=`
+ <div>
+                        <div>TO PAY</div>
+                        <div>${totalamt}</div>
+                    </div>
+ `
+ document.getElementById("toPay").innerHTML=div1;
 }
 displayright()
