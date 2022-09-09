@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order food online from India's best food delivery service. Order from restaurants near you</title>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/portal/c/logo_2022.png">
+           
+<style>
+#g-container-div{
+
+  display: flex;
+  flex-direction: column;
+}
+
+#g-top{
+    height: 30%;
+     display: flex;
+    background-color: #171a29;
+    color: #fff;
+    /* position: sticky; */
+     margin: 0 -20px;
+
+    
+}
+
+
+
+#g-top-left{
+    width:20%;
+    margin-left: 30px;
+    margin-top: 60px;
+    /* margin-top: 30px; */
+    /* margin: auto; */
+    /* position: fixed; */
+    
+}
+#g-top-middle{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+    margin-left: 60px;
+    align-items: stretch;
+    /* position: fixed; */
+}
+#g-top-right{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+     margin: auto;
+     margin-top: 50px;
+     /* position: fixed; */
+   
+}
+
+#g-top-left-image{
+    
+    width: 254px;
+    aspect-ratio: auto 254 / 165;
+    height: 165px;
+}
+
+
+
+#g-offer-image{
+    width: 40%;
+    margin-left: 30px;
+}
+#dicount-ist{
+    display: flex;
+    justify-content: space-around;
+}
+#g-offer-content{
+    margin-bottom: 20px;
+    word-break: break-word;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 14px;
+    color: inherit;
+    opacity: .9;
+    line-height: 1.2;
+    font-weight: 500;
+}
+    
+
+
+/* #g-offer-image-div{
+     
+
+} */
+#discount-second{
+    display: flex;
+}
+.g-offer-content{
+    margin-right: 90px;
+    width: 100%;
+    margin-bottom: 20px;
+    word-break: break-word;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 14px;
+    color: inherit;
+    opacity: .9;
+    line-height: 1.2;
+    font-weight: 500;
+}
+#g-right-child{
+    border: 1px solid white;
+    width: 85%;
+}
+#offer{
+     font-size: 20px;
+    font-weight: 500;
+    padding-right: 10px;
+    padding-bottom: 10px;
+   }
+
+
+#g-rating-parent-div{
+    display: flex;
+    justify-content: space-around;
+     width: 70%;
+     margin-top: 10px;
+    
+
+}
+#g-star-image-div{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-around;
+    font-weight: 600;
+    font-size: 16px;
+    
+}
+
+
+#g-rating-number{
+    margin-top: 5px;
+    margin-right: 5px;
+    font-weight: 600;
+    font-size: 16px;
+
+}
+
+
+#rating-iind{
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+#rating-third{
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+#g-hotel-name{
+    max-width: 538px;
+    margin: 0;
+    font-weight: 300;
+    font-size: 32px;
+    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+    letter-spacing: 0;
+}
+
+
+#g-position{
+  text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    /* color: inherit; */
+    opacity: .7;
+    font-size: 15px;
+    max-width: 538px;
+    margin-top: 10px; 
+    font-weight: 400;
+}
+
+
+
+#g-position-city{
+    margin-top: 10px;
+    opacity: .7; 
+    font-size: 15px;
+    max-width: 538px;
+    font-weight: 400;
+}
+
+
+#g-ratint-quantity{
+    font-weight: 400;
+    font-size: 12px;
+}
+.g-time{
+    font-weight: 400;
+    font-size: 12px;
+}
+
+
+/* bottom styling */
+
+#g-bottom{
+   height:70%;
+
+   display: flex;
+   flex-direction: row;
+}
+#pr-left-div{
+    width: 25%;
+    /* width: 500px; */
+    height: 400px;
+    border: 1px solid green;
+}
+#product-right-div{
+    width: 25%;
+    height: 600px;
+    /* width: 100px; */
+    border: 1px solid brown;
+}
+
+#pr-middle-div{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 50%;
+    height: 1000px;
+    /* width: 1000px; */
+}
+
+#pr-middle-main-div{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid crimson;
+    justify-content: flex-end;
+}
+#product-main-div-left{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    
+   
+}
+#pr-main-div-right{
+    display: flex;
+    flex-direction: column;
+     margin-top: 60px;
+    margin-left: 100px; 
+    
+     background-blend-mode: overlay; 
+     
+    
+
+}
+#pr-image-right-div{
+    width: 50%;
+    border-radius: 6px;
+}
+#recommended{
+ font-size: 1.3rem;
+    font-weight: 600;
+}
+#pr-item-number{
+    margin-right: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #3e4152;
+    word-break: break-word;
+    margin-top: -20px;
+  
+}
+#pr-item-name{
+    margin-right: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #3e4152;
+    word-break: break-word;
+}
+#pr-item-rate{
+    color: #3e4152;
+}
+#pr-item-service{
+    margin-top: 14px;
+    line-height: 1.3;
+    color: rgba(40,44,63,.45);
+    width: 70%;
+    letter-spacing: -.3px;
+    font-size: 1rem;
+}
+#veg-icon{
+    width: 5%;
+   }
+#veg-icon-div{
+    margin-top: 10px;
+}
+#recom-main-div{
+    display: flex;
+    flex-direction: column;
+   align-items: flex-start;
+}
+#button-div{
+    margin-left: 30px;
+    
+}
+#add-div{
+    font-weight: bold;
+    color: #60b246;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+#container{
+            width: 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+
+        }
+        .div1{
+            display: flex;
+
+        }
+        .div1>div:first-child{
+            width: 400px;
+        }
+        .div1>div:last-child{
+            display: flex;
+            flex-direction: column;
+        }
+        .div1>div:last-child>img{
+            width: 150px;
+        }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+    
+
+    
+
+
+
+
+
+
+</head>
+<body>
+    <div id="g-container-div">
+        <div id="g-top">
+              <div id="g-top-left"> 
+                    <img id="g-top-left-image" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ifckr4auq9wbtvmodgme" alt="">
+                      </div>
+              <div id="g-top-middle"> 
+
+                    <div > <h1 id="g-hotel-name">Sardar ji Ke Mashoor Chhole Bhature Punjabi Zaiqa</h1></div>
+                    <div id="g-position">Punjabi, North Indian</div>
+                    <div id="g-position-city">Hazratganj, Lalbagh</div>
+                    <div id="g-rating-parent-div">
+                        <div id="rating-first">
+                            <div id="g-star-image-div">
+                                <div>&#9734</div>
+                                <div id="g-rating-number">3.9</div>
+                            </div>
+                            <div id="g-ratint-quantity">1K+ Ratings</div>
+                        </div>
+                        <div id="rating-iind">
+                            <div id="g-mins">45 mins</div>
+                            <div class="g-time">Delivery Time</div>
+                        </div>
+                        <div id="rating-third">
+                            <div>₹ 60</div>
+                            <div class="g-time">Cost for two</div>
+                        </div>
+                    </div>
+
+
+
+                    </div>
+                    <div id="g-top-right"> 
+                     <div id="g-right-child">
+                    <div id="offer">OFFER</div>
+                    <div id="dicount-ist">
+                        <div id="g-offerimage-div"><img id="g-offer-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsg2blpB_O1NG6_qNVqFVLRnS4F95oX1KtGg&usqp=CAU" alt=""></div>
+                        <div class="g-offer-content" id="g-offer-content" >20% off up to ₹125 | Use KOTAK125 Above ₹500</div>
+                    </div>
+                    <div id="discount-second">
+                        <div> <img  id="g-offer-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsg2blpB_O1NG6_qNVqFVLRnS4F95oX1KtGg&usqp=CAU" alt=""></div>
+                        <div class="g-offer-content">Flat ₹100 off | Use RUPAYBASH Above ₹299</div>
+                    </div>
+                     </div>
+
+
+                     
+
+    
+    
+    
+             </div>
+                </div>
+               
+
+
+
+
+
+
+
+
+
+
+         <div id="g-bottom">
+            <div id="pr-left-div"></div>
+             
+
+
+
+            <div id="pr-middle-div" >
+
+            
+                           
+                    
+
+
+                </div>
+            </div>
+
+            <div id="product-right-div"></div>
+
+          
+           
+          </div>
+        </div>
+</body>
+</html>
+
+
+<script>
+
+    let cartArr=JSON.parse(localStorage.getItem("cartItems")) || [];
+    
+    let menuArr=[];
+    
+    function getData() {
+      fetch(`https://swiggy-clone-akash.herokuapp.com/data`).then((response) =>
+        response.json().then((res) => {
+    
+            menuArr=res[0]["menu-items"];
+            console.log(menuArr);
+            // data=res[0]["menu-items"];
+            // console.log(data);
+            displayItems(menuArr);
+        
+        })
+      );
+    }
+    getData();
+    
+    function displayItems(data){
+        data.map(function(ele,index){
+            let div1=document.createElement("div");
+            div1.setAttribute("class","div1");
+            
+            let div2=document.createElement("div");
+            let h2=document.createElement("h3");
+            h2.innerText=ele.name;
+            let h3=document.createElement("h3");
+            h3.innerText=ele.price;
+    
+            div2.append(h2,h3);
+    
+            let div3=document.createElement("div");
+            let image=document.createElement("img");
+            image.setAttribute("src","https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ex8saxejvf3tree8fmzv");
+            
+            let btn=document.createElement("button");
+            btn.setAttribute("id",`cartButton${index}`)
+            let flag=true;
+            for(let i=0;i<cartArr.length;i++){
+                if(cartArr[i].name===ele.name){
+                    flag=false;
+                }
+            }
+            if(flag===false){
+                btn.innerText="ADDED";
+            }
+            else{
+                btn.innerText="ADD";
+            }
+            btn.addEventListener("click",function(){
+                addToCart(index);
+            })
+    
+            div3.append(image,btn);
+            div1.append(div2,div3);
+            document.getElementById("pr-middle-div").append(div1);
+    
+        })
+    }
+    
+    function addToCart(index){
+        
+        let flag=true;
+        for(let i=0;i<cartArr.length;i++){
+            if(cartArr[i].name===menuArr[index].name){
+                flag=false;
+                break;
+            }
+        }
+        if(flag===false){
+            alert("This item is already added!");
+        }
+        else{
+            cartArr.push(menuArr[index]);
+            localStorage.setItem("cartItems",JSON.stringify(cartArr));
+            document.getElementById(`cartButton${index}`).innerText="ADDED";
+        }
+    }
+    
+    
+    </script>
