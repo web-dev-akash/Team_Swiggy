@@ -118,27 +118,37 @@ let getAddress=()=>{
     let flat=document.getElementById("door").value;
     let landmark=document.getElementById("landmark").value;
     homevalue;
+       
+    var div1=document.createElement("div");
+    div1.setAttribute("class","newone");
+    var div2=document.createElement("div");
+    div2.setAttribute("class",icon)
+    var div3=document.createElement("div");
+    div3.setAttribute("class","addressBox")
+    var div4=document.createElement("div");
+    div4.innerText=homevalue;
+    var div5=document.createElement("p");
+    div5.innerText=flat;
+    var div6=document.createElement("p");
+    div6.innerText=landmark
+    var div7=document.createElement("div");
+    div7.setAttribute("class","time");
+    div7.innerText="36 MINS"
+    var div8=document.createElement("div");
+    div8.append(div5,div6);
+    let btn=document.createElement("button");
+    btn.innerText="DELIVER HERE"
+    btn.addEventListener("click",function(){
+        displayPayment(flat,landmark,homevalue)
+    })
+    var div9=document.createElement("div");
+    div9.append(div4,div8,div7,btn)
+    div3.append(div9)
+    div1.append(div2,div3)
     
-    var div =`
-    <div class="newone">
-    <div class="${icon}"></div>
-    <div class="addressBox">
-    
-    <div>
-        <div>${homevalue}</div>
-        <div>
-            <p>${flat}</p>
-            <p>${landmark}</p>
-        </div>
-        <div class="time">36 MINS</div>
-        <button>DELIVER HERE</button>
-    </div>
-  </div>
-    </div>
-    `
     
     document.getElementById("address").innerHTML=`<div>Select Address</div>`
-    document.getElementById("addnew").innerHTML+=div
+    document.getElementById("addnew").append(div1);
 
 }
 document.getElementById("bottom").addEventListener("click",getAddress);
@@ -166,3 +176,67 @@ function check(){
     }
 }
 document.getElementById("icons").addEventListener("click",check);
+
+
+
+
+function displayPayment(flat,landmark,homevalue){
+    document.getElementById("removeafter").innerText="";
+    document.getElementById("hide").setAttribute("class","unhide");
+
+}
+
+
+
+
+// payment
+
+
+var form = document.querySelector("form").innerHTML;
+var placeOrderBtn = document.querySelector(".payNowAjax-base-actionButton").innerHTML;
+document.getElementById("card").addEventListener("click", showCard);
+document.getElementById("card").addEventListener("click", showCard);
+function showCard(){
+    var x = document.querySelector("form");
+    document.querySelector("#card").style.color = "#282c3f";
+    document.querySelector("#cod").style.color = "#686b78";
+    document.querySelector("#cod").style.backgroundColor = "#edf1f7";
+    document.querySelector("#card").style.backgroundColor = "white";
+    x.innerHTML = form;
+    var btn = document.querySelector(".payNowAjax-base-actionButton");
+    btn.addEventListener("click", function(){
+        event.preventDefault();
+        window.location = "thankyou.html";
+    })
+}
+document.getElementById("cod").addEventListener("click", showCod);
+function showCod(){
+    var form = document.querySelector("form");
+    form.innerHTML = "";
+
+    document.querySelector("#card").style.color = "#686b78";
+    document.querySelector("#cod").style.color = "#282c3f";
+    document.querySelector("#card").style.backgroundColor = "#edf1f7";
+    document.querySelector("#cod").style.backgroundColor = "white";
+
+    var div = document.createElement("div");
+    var headingDiv = document.createElement("div");
+    headingDiv.innerText = "Pay on delivery (Cash/Card/UPI)";
+    headingDiv.setAttribute("class","card-base-heading");
+
+    var inputDiv = document.createElement("div");
+    inputDiv.innerText = "You can pay via Cash/Card or UPI enabled app at the time of delivery. Ask your delivery executive for these options.";
+    inputDiv.setAttribute("class", "codCardUI-base-helpText");
+    div.append(headingDiv, inputDiv);
+    
+    var btn = document.createElement("button");
+    btn.setAttribute("class", "payNowAjax-base-actionButton");
+    btn.innerHTML = placeOrderBtn;
+    // var formbtn = document.querySelector(".payNowAjax-base-actionButton");
+    btn.addEventListener("click", function(){
+        event.preventDefault();
+        // alert("Order confirmed")
+        location = "thankYou.html";
+    });
+    form.append(div, btn);
+}
