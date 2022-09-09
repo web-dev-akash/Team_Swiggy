@@ -214,10 +214,8 @@ function showCard() {
   document.querySelector("#card").style.backgroundColor = "white";
   x.innerHTML = form;
   var btn = document.querySelector(".payNowAjax-base-actionButton");
-  btn.addEventListener("click", function () {
-    event.preventDefault();
-    window.location = "thankyou.html";
-  });
+  btn.setAttribute("id", "cart_items_button2");
+  // btn.addEventListener("click", gotoDashBoard);
 }
 document.getElementById("cod").addEventListener("click", showCod);
 function showCod() {
@@ -242,16 +240,17 @@ function showCod() {
 
   var btn = document.createElement("button");
   btn.setAttribute("class", "payNowAjax-base-actionButton");
+  btn.setAttribute("id", "cart_items_button");
   btn.innerHTML = placeOrderBtn;
-  // var formbtn = document.querySelector(".payNowAjax-base-actionButton");
-  btn.addEventListener("click", function () {
-    event.preventDefault();
-    // alert("Order confirmed")
-    location = "thankYou.html";
-  });
+  btn.addEventListener("click", gotoDashBoard);
   form.append(div, btn);
 }
 
+// document.getElementsById("placeOrderBtn").addEventListener("click", () => {
+//   // event.preventDefault();
+//   alert("Order Placed Successfully!");
+//   location.href = "../dashboard.html";
+// });
 // displayright
 
 function displayright() {
@@ -304,3 +303,14 @@ function displayright() {
   document.getElementById("toPay").innerHTML = div1;
 }
 displayright();
+document
+  .getElementById("cart_items_button2")
+  .addEventListener("click", gotoDashBoard);
+document
+  .getElementById("cart_items_button")
+  .addEventListener("click", gotoDashBoard);
+function gotoDashBoard(e) {
+  e.preventDefault();
+  alert("Order Placed Successfully!");
+  window.location.href = "./dashboard.html#";
+}

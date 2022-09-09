@@ -24,13 +24,12 @@ function renderDom(data) {
     <p class="text-muted">${data[0].Cuisines}</p>
     <p class="text-muted">${data[0].Address}</p>
     <div class="col-6">
-        <p>${data[0].aggregate_rating}</p>
+        <p><i class="fa-solid fa-star"></i> ${data[0].aggregate_rating}</p>
         <p class="text-muted">${data[0].Votes} Votes</p>
     </div>
     
     <div class="col-6">
-        <p>${data[0].average_Cost_for_two}</p>
-        <p class="text-muted">Cost for two</p>
+        <p>₹ ${data[0].average_Cost_for_two} Cost for two</p>
     </div>`;
   let target = document.getElementById("menu_in_glance");
   let target2 = document.getElementById("menu_div");
@@ -48,7 +47,7 @@ function renderDom(data) {
                 <p>₹ ${menu_item[i].price}</p>
                 <p class="text-muted">${menu_item[i].description}</p>
             </div>
-            <img src="${menu_item[i].image}"   class="restaurant-image">
+            <img src="./Resource/${menu_item[i].image}"   class="restaurant-image">
           </div>`;
       add_btn.setAttribute("id", `add+${menu_item[i].id}`);
 
@@ -143,7 +142,7 @@ function handel_checkout() {
   let log_info = localStorage.getItem("user_log_session");
   log_info = JSON.parse(log_info);
   if (log_info.login_status) {
-    window.location.assign("./cartPage/cart.html");
+    window.location.assign("./cart.html");
   }
 }
 
