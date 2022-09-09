@@ -304,7 +304,7 @@ cartitem.map(function(el){
     
                       <hr class="my-4">
     `
-    document.getElementById("items").innerHTML+=div
+    document.getElementById("items").innerHTML+=div;
 })
 }
-displayright
+displayright()
