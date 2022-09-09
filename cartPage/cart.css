@@ -220,6 +220,19 @@ height: 70px;
 .unhide{
     display: block;
 }
+.cnfrm{
+    display: flex;
+    justify-content: space-between;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.flex>div:first-child{
+    margin-top: 35px;
+    font-size: large;
+}
 
 
 

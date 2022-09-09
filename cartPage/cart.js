@@ -1,6 +1,13 @@
 import {items} from "./utility.js"
-var data=JSON.parse(localStorage.getItem("items"))||[];
+var data=JSON.parse(localStorage.getItem("cartItems"))||[];
+console.log(data);
+var addressArr=JSON.parse(localStorage.getItem("address"))||[];
+var id=1;
 
+if(addressArr.length!=0){
+document.getElementById("address").innerHTML="";
+displayAddress(addressArr);
+}
 
 
 // var form = document.querySelector("form").innerHTML;
@@ -53,7 +60,7 @@ var data=JSON.parse(localStorage.getItem("items"))||[];
 //     form.append(div, btn);
 // }
 
-const displayRightside=()=>{
+function displayRightside(){
     let div1=`<div id="shopname">
     <div>shop Image</div>
     <div>Shopname</div>
@@ -102,8 +109,6 @@ let div5=`
 document.getElementById("rightBlock").append(div1,div2,div3,div4,div5)
 
 }
-const decrease=(qty)=>{
-}
 
 
 const map=()=>{
@@ -118,19 +123,41 @@ let getAddress=()=>{
     let flat=document.getElementById("door").value;
     let landmark=document.getElementById("landmark").value;
     homevalue;
-       
-    var div1=document.createElement("div");
+    let obj={
+        id:id,
+        name:"name",
+        flat:flat,
+        landmark:landmark,
+        home:homevalue,
+        time:"36 MINS"
+    }
+    addressArr.push(obj);
+    id++;
+    localStorage.setItem("address",JSON.stringify(addressArr));
+    
+    displayAddress(addressArr)
+
+    
+
+    
+    
+}
+function displayAddress(data){
+    document.getElementById("addnew").innerHTML="";
+    document.getElementById("confirmAdd").innerHTML="";
+    data.map(function(el){
+        var div1=document.createElement("div");
     div1.setAttribute("class","newone");
     var div2=document.createElement("div");
     div2.setAttribute("class",icon)
     var div3=document.createElement("div");
     div3.setAttribute("class","addressBox")
     var div4=document.createElement("div");
-    div4.innerText=homevalue;
+    div4.innerText=el.home;
     var div5=document.createElement("p");
-    div5.innerText=flat;
+    div5.innerText=el.flat;
     var div6=document.createElement("p");
-    div6.innerText=landmark
+    div6.innerText=el.landmark
     var div7=document.createElement("div");
     div7.setAttribute("class","time");
     div7.innerText="36 MINS"
@@ -139,7 +166,8 @@ let getAddress=()=>{
     let btn=document.createElement("button");
     btn.innerText="DELIVER HERE"
     btn.addEventListener("click",function(){
-        displayPayment(flat,landmark,homevalue)
+        displayPayment()
+        displayConfirmAddress(el.id)
     })
     var div9=document.createElement("div");
     div9.append(div4,div8,div7,btn)
@@ -147,10 +175,51 @@ let getAddress=()=>{
     div1.append(div2,div3)
     
     
-    document.getElementById("address").innerHTML=`<div>Select Address</div>`
+    document.getElementById("address").innerHTML=`<div class="flex"><div>Select Address</div>
+    <div><button onclick="w3_open()" id="addbtn">ADD NEW</button></div></div>
+    `
     document.getElementById("addnew").append(div1);
-
+    })
+    
 }
+
+function displayConfirmAddress(index){
+    let obj=addressArr.filter(function(el){
+        return el.id==index;
+    })
+    console.log(obj)
+
+    document.getElementById("addnew").innerHTML="";
+    document.getElementById("confirmAdd").innerHTML="";
+    document.getElementById("address").innerHTML="";
+    console.log(obj[0].home)
+    var div1=document.createElement("div");
+    div1.setAttribute("class","cnfrm")
+    var div2=document.createElement("div");
+    div2.innerText="DELIVERY ADDRESS"
+    var i=document.createElement("i");
+    i.setAttribute("class","fa-solid fa-circle-check")
+    div2.append(i)
+    var div3=document.createElement("div");
+    div3.innerText="CHANGE"
+    div3.addEventListener("click",displayAddress);
+    div1.append(div2,div3);
+    document.getElementById("confirmAdd").append(div1);
+    let div = `
+                    
+                    <div>
+                        <div>${obj[0].home}</div>
+                        <div>
+                            <p>${obj[0].flat}</p>
+                            <p>${obj[0].landmark}</p>
+                        </div>
+                        <div>${obj[0].time}</div>
+                    </div>
+    `
+    document.getElementById("confirmAdd").innerHTML+=div;
+}
+
+
 document.getElementById("bottom").addEventListener("click",getAddress);
 var homevalue
 var icon
@@ -180,7 +249,7 @@ document.getElementById("icons").addEventListener("click",check);
 
 
 
-function displayPayment(flat,landmark,homevalue){
+function displayPayment(){
     document.getElementById("removeafter").innerText="";
     document.getElementById("hide").setAttribute("class","unhide");
 
@@ -240,3 +309,10 @@ function showCod(){
     });
     form.append(div, btn);
 }
+
+
+
+
+// displayright
+
+
