@@ -29,8 +29,9 @@ function renderDom(data) {
       } else {
         colorCode = "#e1b055";
       }
+      localStorage.setItem("ID", data[i].RestaurantID);
       container.innerHTML += ` 
-            <a href="eg_user_restaurent_view.html?restaurantID=${data[i].RestaurantID}">
+            <a href="restaurent.html?restaurant_id=${data[i].RestaurantID}">
               <div class="ak-card">
                   <img src="${data[i].restaurantImages}" alt="restaurant_img">
                   <p>${data[i].RestaurantName}</p>

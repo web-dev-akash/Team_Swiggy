@@ -2,23 +2,21 @@
 
 import { footer, navbar } from "./utility.js";
 
-document.getElementById("navbar").innerHTML=navbar
-document.getElementById("footer").innerHTML=footer
+document.getElementById("navbar").innerHTML = navbar;
+document.getElementById("footer").innerHTML = footer;
 
-var cartitem=JSON.parse(localStorage.getItem("cartItems"))||[];
-console.log(cartitem);
-var addressArr=JSON.parse(localStorage.getItem("address"))||[];
-var id=1;
+var cartitem = JSON.parse(localStorage.getItem("user_log_session")) || [];
+console.log(cartitem.user_cart);
+var addressArr = JSON.parse(localStorage.getItem("address")) || [];
+var id = 1;
 
-if(addressArr.length!=0){
-document.getElementById("address").innerHTML="";
-displayAddress(addressArr);
+if (addressArr.length != 0) {
+  document.getElementById("address").innerHTML = "";
+  displayAddress(addressArr);
 }
-
 
 // var form = document.querySelector("form").innerHTML;
 // var placeOrderBtn = document.querySelector(".payNowAjax-base-actionButton").innerHTML;
-
 
 // document.getElementById("card").addEventListener("click", showCard);
 // function showCard(){
@@ -53,7 +51,7 @@ displayAddress(addressArr);
 //     inputDiv.innerText = "You can pay via Cash/Card or UPI enabled app at the time of delivery. Ask your delivery executive for these options.";
 //     inputDiv.setAttribute("class", "codCardUI-base-helpText");
 //     div.append(headingDiv, inputDiv);
-    
+
 //     var btn = document.createElement("button");
 //     btn.setAttribute("class", "payNowAjax-base-actionButton");
 //     btn.innerHTML = placeOrderBtn;
@@ -66,103 +64,96 @@ displayAddress(addressArr);
 //     form.append(div, btn);
 // }
 
+const map = () => {
+  let value = "kanpur";
+  let div = `    <div class="mapouter"><div class="gmap_canvas"><iframe width="349" height="310" id="gmap_canvas" src="https://maps.google.com/maps?q=${value}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"></a><br><style>.mapouter{position:relative;text-align:right;height:310px;width:349px;}</style><a href="https://www.embedgooglemap.net">embed google map location</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:310px;width:349px;}</style></div></div>
+    `;
+  document.getElementById("map").innerHTML = div;
+};
+map();
+let getAddress = () => {
+  w3_close();
+  let flat = document.getElementById("door").value;
+  let landmark = document.getElementById("landmark").value;
+  homevalue;
+  let obj = {
+    id: id,
+    name: "name",
+    flat: flat,
+    landmark: landmark,
+    home: homevalue,
+    time: "36 MINS",
+  };
+  addressArr.push(obj);
+  id++;
+  localStorage.setItem("address", JSON.stringify(addressArr));
 
+  displayAddress(addressArr);
+};
+function displayAddress(data) {
+  document.getElementById("addnew").innerHTML = "";
+  document.getElementById("confirmAdd").innerHTML = "";
+  data.map(function (el) {
+    var div1 = document.createElement("div");
+    div1.setAttribute("class", "newone");
+    var div2 = document.createElement("div");
+    div2.setAttribute("class", icon);
+    var div3 = document.createElement("div");
+    div3.setAttribute("class", "addressBox");
+    var div4 = document.createElement("div");
+    div4.innerText = el.home;
+    var div5 = document.createElement("p");
+    div5.innerText = el.flat;
+    var div6 = document.createElement("p");
+    div6.innerText = el.landmark;
+    var div7 = document.createElement("div");
+    div7.setAttribute("class", "time");
+    div7.innerText = "36 MINS";
+    var div8 = document.createElement("div");
+    div8.append(div5, div6);
+    let btn = document.createElement("button");
+    btn.innerText = "DELIVER HERE";
+    btn.addEventListener("click", function () {
+      displayPayment();
+      displayConfirmAddress(el.id);
+    });
+    var div9 = document.createElement("div");
+    div9.append(div4, div8, div7, btn);
+    div3.append(div9);
+    div1.append(div2, div3);
 
-const map=()=>{
-    let value="kanpur";
-    let div=`    <div class="mapouter"><div class="gmap_canvas"><iframe width="349" height="310" id="gmap_canvas" src="https://maps.google.com/maps?q=${value}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"></a><br><style>.mapouter{position:relative;text-align:right;height:310px;width:349px;}</style><a href="https://www.embedgooglemap.net">embed google map location</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:310px;width:349px;}</style></div></div>
-    `
-    document.getElementById("map").innerHTML=div;
-}
-map()
-let getAddress=()=>{
-    w3_close();
-    let flat=document.getElementById("door").value;
-    let landmark=document.getElementById("landmark").value;
-    homevalue;
-    let obj={
-        id:id,
-        name:"name",
-        flat:flat,
-        landmark:landmark,
-        home:homevalue,
-        time:"36 MINS"
-    }
-    addressArr.push(obj);
-    id++;
-    localStorage.setItem("address",JSON.stringify(addressArr));
-    
-    displayAddress(addressArr)
-
-    
-
-    
-    
-}
-function displayAddress(data){
-    document.getElementById("addnew").innerHTML="";
-    document.getElementById("confirmAdd").innerHTML="";
-    data.map(function(el){
-        var div1=document.createElement("div");
-    div1.setAttribute("class","newone");
-    var div2=document.createElement("div");
-    div2.setAttribute("class",icon)
-    var div3=document.createElement("div");
-    div3.setAttribute("class","addressBox")
-    var div4=document.createElement("div");
-    div4.innerText=el.home;
-    var div5=document.createElement("p");
-    div5.innerText=el.flat;
-    var div6=document.createElement("p");
-    div6.innerText=el.landmark
-    var div7=document.createElement("div");
-    div7.setAttribute("class","time");
-    div7.innerText="36 MINS"
-    var div8=document.createElement("div");
-    div8.append(div5,div6);
-    let btn=document.createElement("button");
-    btn.innerText="DELIVER HERE"
-    btn.addEventListener("click",function(){
-        displayPayment()
-        displayConfirmAddress(el.id)
-    })
-    var div9=document.createElement("div");
-    div9.append(div4,div8,div7,btn)
-    div3.append(div9)
-    div1.append(div2,div3)
-    
-    
-    document.getElementById("address").innerHTML=`<div class="flex"><div>Select Address</div>
+    document.getElementById(
+      "address"
+    ).innerHTML = `<div class="flex"><div>Select Address</div>
     <div><button onclick="w3_open()" id="addbtn">ADD NEW</button></div></div>
-    `
+    `;
     document.getElementById("addnew").append(div1);
-    })
-    
+  });
 }
 
-function displayConfirmAddress(index){
-    let obj=addressArr.filter(function(el){
-        return el.id==index;
-    })
-    console.log(obj)
+function displayConfirmAddress(index) {
+  let obj = addressArr.filter(function (el) {
+    return el.id == index;
+  });
+  console.log(obj);
 
-    document.getElementById("addnew").innerHTML="";
-    document.getElementById("confirmAdd").innerHTML="";
-    document.getElementById("address").innerHTML="";
-    console.log(obj[0].home)
-    var div1=document.createElement("div");
-    div1.setAttribute("class","cnfrm")
-    var div2=document.createElement("div");
-    div2.innerText="DELIVERY ADDRESS"
-    var i=document.createElement("i");
-    i.setAttribute("class","fa-solid fa-circle-check")
-    div2.append(i)
-    var div3=document.createElement("div");
-    div3.innerText="CHANGE"
-    div3.addEventListener("click",displayAddress);
-    div1.append(div2,div3);
-    document.getElementById("confirmAdd").append(div1);
-    let div = `
+  document.getElementById("addnew").innerHTML = "";
+  document.getElementById("confirmAdd").innerHTML = "";
+  document.getElementById("address").innerHTML = "";
+  console.log(obj[0].home);
+  var div1 = document.createElement("div");
+  div1.setAttribute("class", "cnfrm");
+  var div2 = document.createElement("div");
+  div2.innerText = "DELIVERY ADDRESS";
+  var i = document.createElement("i");
+  i.setAttribute("class", "fa-solid fa-circle-check");
+  div2.append(i);
+  var div3 = document.createElement("div");
+  div3.innerText = "CHANGE";
+  div3.addEventListener("click", displayAddress);
+  div1.append(div2, div3);
+  document.getElementById("confirmAdd").append(div1);
+  let div = `
                     
                     <div>
                         <div>${obj[0].home}</div>
@@ -172,113 +163,103 @@ function displayConfirmAddress(index){
                         </div>
                         <div>${obj[0].time}</div>
                     </div>
-    `
-    document.getElementById("confirmAdd").innerHTML+=div;
+    `;
+  document.getElementById("confirmAdd").innerHTML += div;
 }
 
-
-document.getElementById("bottom").addEventListener("click",getAddress);
-var homevalue
-var icon
-function check(){
-    homevalue=event.target.id;
-    if(homevalue=="Home"){
-        icon="fa-solid fa-house";
-        document.getElementById("Home").style.color="black";
-        document.getElementById("Work").style.color="#93959f";
-        document.getElementById("other").style.color="#93959f";
-    }
-    if(homevalue=="Work"){
-        icon="fa-solid fa-briefcase"
-        document.getElementById("Work").style.color="black";
-        document.getElementById("Home").style.color="#93959f";
-        document.getElementById("other").style.color="#93959f";
-    }
-    if(homevalue=="other"){
-        icon="fa-solid fa-location-dot"
-        document.getElementById("other").style.color="black";
-        document.getElementById("Work").style.color="#93959f";
-        document.getElementById("Home").style.color="#93959f";
-    }
+document.getElementById("bottom").addEventListener("click", getAddress);
+var homevalue;
+var icon;
+function check() {
+  homevalue = event.target.id;
+  if (homevalue == "Home") {
+    icon = "fa-solid fa-house";
+    document.getElementById("Home").style.color = "black";
+    document.getElementById("Work").style.color = "#93959f";
+    document.getElementById("other").style.color = "#93959f";
+  }
+  if (homevalue == "Work") {
+    icon = "fa-solid fa-briefcase";
+    document.getElementById("Work").style.color = "black";
+    document.getElementById("Home").style.color = "#93959f";
+    document.getElementById("other").style.color = "#93959f";
+  }
+  if (homevalue == "other") {
+    icon = "fa-solid fa-location-dot";
+    document.getElementById("other").style.color = "black";
+    document.getElementById("Work").style.color = "#93959f";
+    document.getElementById("Home").style.color = "#93959f";
+  }
 }
-document.getElementById("icons").addEventListener("click",check);
+document.getElementById("icons").addEventListener("click", check);
 
-
-
-
-function displayPayment(){
-    document.getElementById("removeafter").innerText="";
-    document.getElementById("hide").setAttribute("class","unhide");
-
+function displayPayment() {
+  document.getElementById("removeafter").innerText = "";
+  document.getElementById("hide").setAttribute("class", "unhide");
 }
-
-
-
-
-
 
 // payment
 
-
 var form = document.querySelector("form").innerHTML;
-var placeOrderBtn = document.querySelector(".payNowAjax-base-actionButton").innerHTML;
+var placeOrderBtn = document.querySelector(
+  ".payNowAjax-base-actionButton"
+).innerHTML;
 document.getElementById("card").addEventListener("click", showCard);
 document.getElementById("card").addEventListener("click", showCard);
-function showCard(){
-    var x = document.querySelector("form");
-    document.querySelector("#card").style.color = "#282c3f";
-    document.querySelector("#cod").style.color = "#686b78";
-    document.querySelector("#cod").style.backgroundColor = "#edf1f7";
-    document.querySelector("#card").style.backgroundColor = "white";
-    x.innerHTML = form;
-    var btn = document.querySelector(".payNowAjax-base-actionButton");
-    btn.addEventListener("click", function(){
-        event.preventDefault();
-        window.location = "thankyou.html";
-    })
+function showCard() {
+  var x = document.querySelector("form");
+  document.querySelector("#card").style.color = "#282c3f";
+  document.querySelector("#cod").style.color = "#686b78";
+  document.querySelector("#cod").style.backgroundColor = "#edf1f7";
+  document.querySelector("#card").style.backgroundColor = "white";
+  x.innerHTML = form;
+  var btn = document.querySelector(".payNowAjax-base-actionButton");
+  btn.addEventListener("click", function () {
+    event.preventDefault();
+    window.location = "thankyou.html";
+  });
 }
 document.getElementById("cod").addEventListener("click", showCod);
-function showCod(){
-    var form = document.querySelector("form");
-    form.innerHTML = "";
+function showCod() {
+  var form = document.querySelector("form");
+  form.innerHTML = "";
 
-    document.querySelector("#card").style.color = "#686b78";
-    document.querySelector("#cod").style.color = "#282c3f";
-    document.querySelector("#card").style.backgroundColor = "#edf1f7";
-    document.querySelector("#cod").style.backgroundColor = "white";
+  document.querySelector("#card").style.color = "#686b78";
+  document.querySelector("#cod").style.color = "#282c3f";
+  document.querySelector("#card").style.backgroundColor = "#edf1f7";
+  document.querySelector("#cod").style.backgroundColor = "white";
 
-    var div = document.createElement("div");
-    var headingDiv = document.createElement("div");
-    headingDiv.innerText = "Pay on delivery (Cash/Card/UPI)";
-    headingDiv.setAttribute("class","card-base-heading");
+  var div = document.createElement("div");
+  var headingDiv = document.createElement("div");
+  headingDiv.innerText = "Pay on delivery (Cash/Card/UPI)";
+  headingDiv.setAttribute("class", "card-base-heading");
 
-    var inputDiv = document.createElement("div");
-    inputDiv.innerText = "You can pay via Cash/Card or UPI enabled app at the time of delivery. Ask your delivery executive for these options.";
-    inputDiv.setAttribute("class", "codCardUI-base-helpText");
-    div.append(headingDiv, inputDiv);
-    
-    var btn = document.createElement("button");
-    btn.setAttribute("class", "payNowAjax-base-actionButton");
-    btn.innerHTML = placeOrderBtn;
-    // var formbtn = document.querySelector(".payNowAjax-base-actionButton");
-    btn.addEventListener("click", function(){
-        event.preventDefault();
-        // alert("Order confirmed")
-        location = "thankYou.html";
-    });
-    form.append(div, btn);
+  var inputDiv = document.createElement("div");
+  inputDiv.innerText =
+    "You can pay via Cash/Card or UPI enabled app at the time of delivery. Ask your delivery executive for these options.";
+  inputDiv.setAttribute("class", "codCardUI-base-helpText");
+  div.append(headingDiv, inputDiv);
+
+  var btn = document.createElement("button");
+  btn.setAttribute("class", "payNowAjax-base-actionButton");
+  btn.innerHTML = placeOrderBtn;
+  // var formbtn = document.querySelector(".payNowAjax-base-actionButton");
+  btn.addEventListener("click", function () {
+    event.preventDefault();
+    // alert("Order confirmed")
+    location = "thankYou.html";
+  });
+  form.append(div, btn);
 }
-
-
-
 
 // displayright
 
-function displayright(){
-    var totalamt=0;
-cartitem.map(function(el){
-    totalamt+=el.price;
-    let div=`
+function displayright() {
+  var totalamt = 0;
+  const data = cartitem.user_cart;
+  data.map(function (el) {
+    totalamt += el.price;
+    let div = `
     <div class="row mb-4 d-flex justify-content-between align-items-center dish">
                         <div class="col-md-2 col-lg-2 col-xl-2">
                           <img height="20px" width="20px"
@@ -286,7 +267,7 @@ cartitem.map(function(el){
                             class="img-fluid rounded-3" alt="Cotton T-shirt">
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
-                          <h6 class="text-muted">${el.name}</h6>
+                          <h6 class="text-muted">${el.item_name}</h6>
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                           <button class="btn btn-link px-2"
@@ -311,15 +292,15 @@ cartitem.map(function(el){
                       </div>
     
                       <hr class="my-4">
-    `
-    document.getElementById("items").innerHTML+=div;
-})
- var div1=`
+    `;
+    document.getElementById("items").innerHTML += div;
+  });
+  var div1 = `
  <div>
                         <div>TO PAY</div>
                         <div>${totalamt}</div>
                     </div>
- `
- document.getElementById("toPay").innerHTML=div1;
+ `;
+  document.getElementById("toPay").innerHTML = div1;
 }
-displayright()
+displayright();
