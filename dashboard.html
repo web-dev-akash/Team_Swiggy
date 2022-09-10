@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Order food online from India's best food delivery service. Order from
+      restaurants near you
+    </title>
+    <script
+      src="https://kit.fontawesome.com/a642d817f0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./dashboard.css" />
+  </head>
+  <body>
+    <header class="ak-header"></header>
+
+    <!-- ---------------------------------First Section------------------------------- -->
+
+    <section class="ak-section-one">
+      <div class="ak-section-one-container">
+        <div>
+          <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ehchczipeejs7qrk82u6"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/zpkkdkmvlj5cuvqbc50t"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/s5ug2key6e2sptaxku5v"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="ak-section-two">
+      <div class="ak-section-two-container">
+        <div class="ak-restaurant-filters">
+          <div>
+            <p id="ak-restaurant-count">Restaurants</p>
+          </div>
+          <div class="ak-restaurant-filterBtn">
+            <button id="relevance">Relevance</button>
+            <button id="delivery">Delivering Now</button>
+            <button id="rating">Rating</button>
+            <button id="lowToHigh">Cost: Low To High</button>
+            <button id="highToLow">Cost: High To Low</button>
+          </div>
+        </div>
+        <div id="ak-restaurant-data"></div>
+      </div>
+    </section>
+
+    <footer></footer>
+  </body>
+  <script type="module">
+    import { navbar } from "./components/navbar.js";
+    import { footer } from "./components/footer.js";
+    document.querySelector("header").innerHTML = navbar;
+    document.querySelector("footer").innerHTML = footer;
+  </script>
+  <script src="dashboard.js"></script>
+</html>
