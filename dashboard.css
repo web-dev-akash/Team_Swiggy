@@ -7,7 +7,7 @@
   height: 80px;
   /* background-color: #ccc; */
 }
-.ak-header nav {
+nav {
   width: 82%;
   margin: auto;
   display: flex;

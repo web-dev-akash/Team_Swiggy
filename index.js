@@ -48,6 +48,7 @@ function user_login_auth(elem) {
     log_error.textContent = "Wrong Credincials";
     remove(log_error);
   }
+  alert("User registered successfully!");
 }
 
 function register() {
@@ -105,6 +106,12 @@ function register() {
     clear.textContent = "Fill all the fields";
     remove(clear);
   }
+
+  alert("User registered successfully!");
+  document.getElementById("register_name").value = "";
+  document.getElementById("register_userid").value = "";
+  document.getElementById("register_pass").value = "";
+  document.getElementById("register_phone").value = "";
 }
 
 function handle_find_food() {
