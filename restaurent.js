@@ -8,28 +8,28 @@ async function serch_restaurant() {
       let restaurant_id = url.get("restaurant_id");
       current_restaurant_id = restaurant_id;
       await fetch(
-        `https://swiggy-clone-json-server.herokuapp.com/data?restaurant_id=${restaurant_id}`
+        `https://swiggy-api-akash.onrender.com/data?RestaurantID=${restaurant_id}`
       )
         .then((response) => response.json())
         .then((data) => renderDom(data));
     }
   }
 }
-
 function renderDom(data) {
+  console.log(data);
   let img_div = document.getElementById("restaurant_img");
-  img_div.setAttribute("src", `Resource/${data[0].restaurant_images}`);
+  img_div.setAttribute("src", `${data[0].restaurantImages}`);
   let detail = document.getElementById("restaurant_details");
-  detail.innerHTML = `<p class="h3">${data[0].restaurant_name}</p>
+  detail.innerHTML = `<p class="h3">${data[0].RestaurantName}</p>
     <p class="text-muted">${data[0].Cuisines}</p>
     <p class="text-muted">${data[0].Address}</p>
     <div class="col-6">
-        <p><i class="fa-solid fa-star"></i> ${data[0].aggregate_rating}</p>
+        <p><i class="fa-solid fa-star"></i> ${data[0].AggregateRating}</p>
         <p class="text-muted">${data[0].Votes} Votes</p>
     </div>
     
     <div class="col-6">
-        <p>₹ ${data[0].average_Cost_for_two} Cost for two</p>
+        <p>₹ ${data[0].AverageCost} Cost for two</p>
     </div>`;
   let target = document.getElementById("menu_in_glance");
   let target2 = document.getElementById("menu_div");
@@ -37,7 +37,7 @@ function renderDom(data) {
   add_btn.addEventListener("click", pushdata_cart);
   add_btn.textContent = "Add";
   add_btn.setAttribute("class", "btn btn-outline-success btn-sm");
-  let menu_item = data[0].menu_items;
+  let menu_item = data[0].menuItems;
   if (menu_item.length != 0) {
     for (let i = 0; i < menu_item.length; i++) {
       target.innerHTML += `<p style="font-size: 14px;">${menu_item[i].name}</p>`;
@@ -47,10 +47,9 @@ function renderDom(data) {
                 <p>₹ ${menu_item[i].price}</p>
                 <p class="text-muted">${menu_item[i].description}</p>
             </div>
-            <img src="./Resource/${menu_item[i].image}"   class="restaurant-image">
+            <img src="${menu_item[i].image}"   class="restaurant-image">
           </div>`;
       add_btn.setAttribute("id", `add+${menu_item[i].id}`);
-
       target2.append(add_btn);
     }
   }
@@ -59,9 +58,9 @@ function renderDom(data) {
 async function pushdata_cart() {
   let item = event.target.id;
   item = item.split("+");
+  console.log(item);
   if (item[0] == "add") {
     current_item_id = Number(item[1]);
-
     let log_info = localStorage.getItem("user_log_session");
     if (log_info == null) {
       var log_error = document.getElementById("checkout_error");
@@ -73,21 +72,20 @@ async function pushdata_cart() {
       let user_cart;
       let item_name;
       user_cart = log_info.user_cart || [];
-
       let data = await fetch(
-        `https://swiggy-clone-json-server.herokuapp.com/data?restaurant_id=${current_restaurant_id}`
+        `https://swiggy-api-akash.onrender.com/data?RestaurantID=${current_restaurant_id}`
       )
         .then((response) => response.json())
         .then((data) => {
           return data;
         });
 
-      console.log(data);
+      // console.log(data);
 
-      for (let i = 0; i < data[0].menu_items.length; i++) {
-        if (current_item_id == data[0].menu_items[i].id) {
-          price = Number(data[0].menu_items[i].price);
-          item_name = data[0].menu_items[i].name;
+      for (let i = 0; i < data[0].menuItems.length; i++) {
+        if (current_item_id == data[0].menuItems[i].id) {
+          price = Number(data[0].menuItems[i].price);
+          item_name = data[0].menuItems[i].name;
         }
       }
 
@@ -102,7 +100,7 @@ async function pushdata_cart() {
 
       if (!flag) {
         let new_item = {
-          restaurant_id: current_restaurant_id,
+          RestaurantID: current_restaurant_id,
           item_name: item_name,
           price: price,
           qty: 1,
@@ -139,11 +137,7 @@ function render_cart() {
 }
 
 function handel_checkout() {
-  let log_info = localStorage.getItem("user_log_session");
-  log_info = JSON.parse(log_info);
-  if (log_info.login_status) {
-    window.location.assign("./cart.html");
-  }
+  window.location.assign("./cart.html");
 }
 
 function remove(x) {
@@ -159,16 +153,7 @@ function add() {
   submit.addEventListener("click", handel_checkout);
   let target2 = document.getElementById("menu_div");
   target2.addEventListener("click", pushdata_cart);
-  // var reg = document.getElementById("restaurant_submit")
-  // //reg.addEventListener("click", restaurant_login_auth)
-  // var reg = document.getElementById("company_submit")
-  // reg.addEventListener("click", company_login_auth)
-  // var reg = document.getElementById("locate_me")
-  // reg.addEventListener("click", loctionTrack)
-  // var reg = document.getElementById("find_food")
-  // reg.addEventListener("click", handle_find_food)
-
-  // refresh_all_data()
+  render_cart();
 }
 
 window.addEventListener("load", add);

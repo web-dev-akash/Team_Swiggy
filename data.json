@@ -5,7 +5,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Ciclo Cafe",
       "restaurantImages": "./Resource/cafe1.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Black Forrest Cake",
@@ -112,7 +112,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "AB's - Absolute Barbecues",
       "restaurantImages": "./Resource/Barbeques.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -203,8 +203,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Pind",
       "restaurantImages": "./Resource/pind.jpeg",
-
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Masala Dhosa Sambar",
@@ -295,7 +294,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Makers & Bakers",
       "restaurantImages": "./Resource/makers_Bakers.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Black Forrest Cake",
@@ -402,7 +401,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Blue Tokai Coffee Roasters",
       "restaurantImages": "./Resource/cafe2.jpeg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Black Forrest Cake",
@@ -509,7 +508,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Dominos",
       "restaurantImages": "./Resource/new_margherita_pizza.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Margherita",
@@ -600,7 +599,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Raghav Ki Rasoi",
       "restaurantImages": "./Resource/NI.jpeg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -691,7 +690,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Cafe Coffee Day",
       "restaurantImages": "./Resource/cafe6.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Black Forrest Cake",
@@ -798,7 +797,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Barbeque Nation",
       "restaurantImages": "./Resource/barbeque_res.jpeg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -937,7 +936,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "PS Wah Bhai Wah",
       "restaurantImages": "./Resource/res_1.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -1076,7 +1075,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Anand Food Factory",
       "restaurantImages": "./Resource/res_1.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -1167,7 +1166,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Nirula's",
       "restaurantImages": "./Resource/maurya_res.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -1258,7 +1257,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Olive Kitchen",
       "restaurantImages": "./Resource/res_1.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -1349,7 +1348,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "McDonald's",
       "restaurantImages": "./Resource/McD.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Big Mac®",
@@ -1439,7 +1438,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Spice Court - Hotel Maurya",
       "restaurantImages": "./Resource/maurya_res.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Noodles",
@@ -1642,7 +1641,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Angeethi",
       "restaurantImages": "./Resource/Barbeques.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -1733,7 +1732,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Red Chilli",
       "restaurantImages": "./Resource/res_1.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -1824,7 +1823,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Raj Rasoi",
       "restaurantImages": "./Resource/kaveri.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -1971,7 +1970,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Swaaddesh",
       "restaurantImages": "./Resource/aroma_res.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Panner Reshmi Seekh",
@@ -2062,7 +2061,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "German Bakery Wunderbar",
       "restaurantImages": "./Resource/cafe6.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Black Forrest Cake",
@@ -2169,7 +2168,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Chili's",
       "restaurantImages": "./Resource/udp.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Noodles",
@@ -2244,7 +2243,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Tales & Spirits",
       "restaurantImages": "./Resource/cafe2.jpeg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Black Forrest Cake",
@@ -2351,7 +2350,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "The Kav's",
       "restaurantImages": "./Resource/res_1.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Masala Dhosa Sambar",
@@ -2442,7 +2441,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Kaveri Restaurant And Caterers",
       "restaurantImages": "./Resource/kaveri.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Noodles",
@@ -2645,7 +2644,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Food Belle",
       "restaurantImages": "./Resource/cafe2.jpeg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Noodles",
@@ -2784,7 +2783,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Kaveri Restaurant And Caterers",
       "restaurantImages": "./Resource/udp.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Masala Dhosa Sambar",
@@ -2987,7 +2986,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "OMG Cafe",
       "restaurantImages": "./Resource/cafe6.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Black Forrest Cake",
@@ -3094,7 +3093,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Pizza Hut",
       "restaurantImages": "./Resource/pizza_hut.jpeg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Margherita",
@@ -3185,7 +3184,7 @@
       "RestaurantPassword": "12345",
       "RestaurantName": "Aroma - The Royal Retreat",
       "restaurantImages": "./Resource/aroma_res.jpg",
-      "menu-items": [
+      "menuItems": [
         {
           "id": "1",
           "name": "Noodles",

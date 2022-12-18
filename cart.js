@@ -1,10 +1,6 @@
-// import {items,footer} from "./utility.js"
-
 import { footer, navbar } from "./utility.js";
-
 document.getElementById("navbar").innerHTML = navbar;
 document.getElementById("footer").innerHTML = footer;
-
 var cartitem = JSON.parse(localStorage.getItem("user_log_session")) || [];
 console.log(cartitem.user_cart);
 var addressArr = JSON.parse(localStorage.getItem("address")) || [];
@@ -15,58 +11,9 @@ if (addressArr.length != 0) {
   displayAddress(addressArr);
 }
 
-// var form = document.querySelector("form").innerHTML;
-// var placeOrderBtn = document.querySelector(".payNowAjax-base-actionButton").innerHTML;
-
-// document.getElementById("card").addEventListener("click", showCard);
-// function showCard(){
-//     var x = document.querySelector("form");
-//     document.querySelector("#card").style.color = "black";
-//     document.querySelector("#cod").style.color = "#686b78";
-//     document.querySelector("#cod").style.backgroundColor = "#edf1f7";
-//     document.querySelector("#card").style.backgroundColor = "white";
-//     x.innerHTML = form;
-//     var btn = document.querySelector(".payNowAjax-base-actionButton");
-//     btn.addEventListener("click", function(){
-//         event.preventDefault();
-//         window.location = "thankyou.html";
-//     })
-// }
-// document.getElementById("cod").addEventListener("click", showCod);
-// function showCod(){
-//     var form = document.querySelector("form");
-//     form.innerHTML = "";
-
-//     document.querySelector("#card").style.color = "#686b78";
-//     document.querySelector("#cod").style.color = "black";
-//     document.querySelector("#card").style.backgroundColor = "#edf1f7";
-//     document.querySelector("#cod").style.backgroundColor = "white";
-
-//     var div = document.createElement("div");
-//     var headingDiv = document.createElement("div");
-//     headingDiv.innerText = "Pay on delivery (Cash/Card/UPI)";
-//     headingDiv.setAttribute("class","card-base-heading");
-
-//     var inputDiv = document.createElement("div");
-//     inputDiv.innerText = "You can pay via Cash/Card or UPI enabled app at the time of delivery. Ask your delivery executive for these options.";
-//     inputDiv.setAttribute("class", "codCardUI-base-helpText");
-//     div.append(headingDiv, inputDiv);
-
-//     var btn = document.createElement("button");
-//     btn.setAttribute("class", "payNowAjax-base-actionButton");
-//     btn.innerHTML = placeOrderBtn;
-//     // var formbtn = document.querySelector(".payNowAjax-base-actionButton");
-//     btn.addEventListener("click", function(){
-//         event.preventDefault();
-//         // alert("Order confirmed")
-//         location = "thankYou.html";
-//     });
-//     form.append(div, btn);
-// }
-
 const map = () => {
   let value = "kanpur";
-  let div = `    <div class="mapouter"><div class="gmap_canvas"><iframe width="349" height="310" id="gmap_canvas" src="https://maps.google.com/maps?q=${value}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"></a><br><style>.mapouter{position:relative;text-align:right;height:310px;width:349px;}</style><a href="https://www.embedgooglemap.net">embed google map location</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:310px;width:349px;}</style></div></div>
+  let div = `<div class="mapouter"><div class="gmap_canvas"><iframe width="349" height="310" id="gmap_canvas" src="https://maps.google.com/maps?q=${value}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"></a><br><style>.mapouter{position:relative;text-align:right;height:310px;width:349px;}</style><a href="https://www.embedgooglemap.net">embed google map location</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:310px;width:349px;}</style></div></div>
     `;
   document.getElementById("map").innerHTML = div;
 };
@@ -246,17 +193,11 @@ function showCod() {
   form.append(div, btn);
 }
 
-// document.getElementsById("placeOrderBtn").addEventListener("click", () => {
-//   // event.preventDefault();
-//   alert("Order Placed Successfully!");
-//   location.href = "../dashboard.html";
-// });
-// displayright
-
 function displayright() {
   var totalamt = 0;
   const data = cartitem.user_cart;
   data.map(function (el) {
+    console.log(el);
     totalamt += el.price;
     let div = `
     <div class="row mb-4 d-flex justify-content-between align-items-center dish">
@@ -314,3 +255,8 @@ function gotoDashBoard(e) {
   alert("Order Placed Successfully!");
   window.location.href = "./dashboard.html#";
 }
+document
+  .getElementsByClassName("payNowAjax-base-actionButton")
+  .addEventListener("onclick", () => {
+    localStorage.removeItem("user_log_session");
+  });
